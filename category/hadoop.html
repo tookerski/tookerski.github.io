@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>tookerski`s techblog</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">tookerski`s techblog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content">
+<h2>Articles in the Hadoop category</h2>
+
+
+   <div class="row">
+
+
+        <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/hadoop1-hive-install.html" rel="bookmark" title="Permalink to 本地安装Hadoop1.0.4和Hive0.11.0">本地安装Hadoop1.0.4和Hive0.11.0</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2016-07-22T00:00:00+08:00"> 周五 22 七月 2016 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/tookerski.html"> tookerski</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>关于为什么使用那么低的Hadoop版本。可能许多人都会有个误区，就是说工具越高级越好，其实在实际工作中并不是这样的。实际工作中专注的一是稳定，二是可扩展，三是自定义的程度。特别是对于开源框架来说，在满足需求的前提下，源码越精简更有利于后期的维护和功能拓展。当然，这里后续还是会更新下Hadoop2的相关心得。</p>
+<h2>安装jdk和Hadoop</h2>
+<ol>
+<li>我是在单机安装了Ubuntu16.04操作系统，在另一台电脑通过PuTTY的SSH客户端连接到服务器。在服务端设置好SSH之后，就可以进行连接。
+设置SSH的步骤这里省略，可以参考网上的教程即可。</li>
+<li>连接SSH使用的是putty客户端，使用起来非常方便，只要设置putty的ssh客户端设置，输入服务端的ip地址和端口就可以了。即便在Windows下也可以使用熟悉的Linux bash窗口。</li>
+<li>连接完成，输入服务端用户名和密码就能远程操作服务端配置。</li>
+<li>实验所使用的是在官网下载的jdk7u80，Hadoop版本为1.0.4。通过cp命令将jdk及Hadoop复制到~/apache/目录下，*号表示通配符。
+<code>$ cp jdk* ~/apache/</code></li>
+<li>在当前目录通过tar解压jdk及Hadoop，通过ls确认是否解压成功。
+<code>$ tar -xzf jdk*</code>
+<code>$ tar -xzf hadoop*</code></li>
+<li>通过vim在~/.bashrc文件中设置java的环境变量。
+<code>$ sudo ...</code></li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/hadoop1-hive-install.html" rel="bookmark" title="Permalink to 本地安装Hadoop1.0.4和Hive0.11.0">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/hadoop1.html">hadoop1</a>
+                                            <a class="danger label" href="/tag/hive.html">hive</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/essay.html">essay</a></li>
+		<li><a href="/category/hadoop.html">Hadoop</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/tookerski">GitHub</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

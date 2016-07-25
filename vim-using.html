@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>vim编辑器速查手册</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">tookerski`s techblog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/vim-using.html" rel="bookmark"
+                   title="Permalink to vim编辑器速查手册">vim编辑器速查手册</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2016-06-12T00:00:00+08:00">
+                周日 12 六月 2016
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/tookerski.html"> tookerski</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h3>Vim模式介绍</h3>
+<h5>普通模式(Normal mode)</h5>
+<p>Vim启动后的默认模式。
+普通模式命令往往需要一个操作符结尾。例如普通模式命令<code>dd</code>删除当前行，但是第一个"d"的后面可以跟另外的移动命令来代替第二个d，比如用移动到下一行的"j"键就可以删除当前行和下一行。另外还可以指定命令重复次数，<code>2dd</code>（重复dd两次），和dj的效果是一样的。
+在普通模式中，有很多方法可以进入插入模式。比较普通的方式是按a（append／追加）键或者i（insert／插入）键。</p>
+<h5>插入模式(Insert mode)</h5>
+<p>在插入模式中，可以按ESC键回到普通模式。</p>
+<h5>可视模式(Visual mode)</h5>
+<p>这个模式与普通模式比较相似。但是移动命令会扩大高亮的文本区域。高亮区域可以是字符、行或者是一块文本。当执行一个非移动命令时，命令会被执行到这块高亮的区域上。Vim的"文本对象"也能和移动命令一样用在这个模式中。</p>
+<h5>选择模式(Select mode)</h5>
+<p>这个模式和无模式编辑器的行为比较相似（Windows标准文本控件的方式）。这个模式中，可以用鼠标或者光标键高亮选择文本，不过输入任何字符的话，Vim会用这个字符替换选择的高亮文本块，并且自动进入插入模式。</p>
+<h5>命令行模式(Command line mode)</h5>
+<p>在命令行模式中可以输入会被解释成并执行的文本。例如执行命令（:键），搜索（/和?键）或者过滤命令（!键）。在命令执行之后，Vim返回到命令行模式之前的模式，通常是普通模式。</p>
+<h5>Ex模式(Ex mode)</h5>
+<p>这和命令行模式比较相似，在使用<code>:visual</code>命令离开Ex模式前，可以一次执行多条命令。
+这其中我们常用到就是普通模式、插入模式和命令行模式。</p>
+<h3>三种常用模式的切换</h3>
+<ul>
+<li>vim启动进入普通模式。插入模式或命令行模式时只需要按Esc或者Ctrl+[即可进入普通模式。</li>
+<li>普通模式中按i（插入）或a（附加）键都可以进入插入模式。</li>
+<li>普通模式中按:进入命令行模式。命令行模式中输入wq回车后保存并退出vim。</li>
+</ul>
+<h3>进入vim</h3>
+<ol>
+<li>
+<h5>使用vim命令进入vim界面</h5>
+vim后面加上你要打开的已存在的文件名或者不存在（则作为新建文件）的文件名。 打开终端，输入以下命令：
+    $ vim practice_1.txt
+直接使用vim也可以打开vim编辑器，但是不会打开任何文件。
+    $ vim
+进入命令行模式后输入<code>:e 文件路径</code> 同样可以打开相应文件。</li>
+<li>
+<h5>游标移动</h5>
+在进入vim后，按下i键进入插入模式。在该模式下可以输入文本信息。按<code>Esc</code>进入普通模式，在该模式下使用方向键或者<code>h,j,k,l</code>键可以移动游标。按键说明如下：<blockquote>
+<p>h  左
+l   右（小写L）
+j   下
+k   上
+w   移动到下一个单词
+b   移动到上一个单词</p>
+</blockquote>
+</li>
+</ol>
+<h3>进入插入模式</h3>
+<p>在普通模式下使用下面的键将进入插入模式，并可以从相应的位置开始输入。命令说明如下：</p>
+<blockquote>
+<p>i  在当前光标处进行编辑
+I   在行首插入
+A   在行末插入
+a   在光标后插入编辑
+o   在当前行后插入一个新行
+O   在当前行前插入一个新行
+cw  替换从光标所在位置后到一个单词结尾的字符</p>
+</blockquote>
+<h3>保存文档</h3>
+<p>从普通模式输入<code>:</code>进入命令行模式，输入<code>w</code>回车，保存文档。输入<code>:w 文件名</code>可以将文档另存为其他文件名或存到其它路径下。</p>
+<h3>退出vim</h3>
+<ol>
+<li>
+<h5>命令行模式下退出vim</h5>
+从普通模式输入<code>:</code>进入命令行模式，输入<code>wq</code>回车，保存并退出编辑。以下为其它几种退出方式：<blockquote>
+<p>:q!    强制退出，不保存
+:q  退出
+:wq!    强制保存并退出
+:w &lt;文件路径&gt;   另存为
+:saveas 文件路径    另存为
+:x  保存并退出
+:wq 保存并退出</p>
+</blockquote>
+</li>
+<li>
+<h5>普通模式下退出vim</h5>
+普通模式下输入<code>Shift+zz</code>即可保存退出vim</li>
+</ol>
+<h3>删除文本</h3>
+<p>进入普通模式，使用下列命令可以进行文本快速删除：</p>
+<blockquote>
+<p>x  删除游标所在的字符
+X   删除游标所在前一个字符
+Delete  同x
+dd  删除整行
+dw  删除一个单词（不适用中文）
+d$或D    删除至行尾
+d^  删除至行首
+dG  删除到文档结尾处
+d1G 删至文档首部</p>
+</blockquote>
+<p>除此之外，你还可以在命令之前加上数字，表示一次删除多行，如<code>2dd</code>表示一次删除2行。</p>
+<h3>vim重复命令</h3>
+<ol>
+<li>
+<h5>重复执行上次命令</h5>
+<strong>在普通模式下.(小数点)表示重复上一次的命令操作</strong>
+普通模式下输入<code>x</code>，删除第一个字符，输入<code>.</code>(小数点)会再次删除一个字符，除此之外也可以重复<code>dd</code>的删除操作</li>
+<li>
+<h5>执行指定次数相同的命令</h5>
+进入普通模式输入<code>N&lt;command&gt;</code>，N表示重复后面的次数，下面来练习以下：
+输入<code>10x</code>，删除10个连续字符
+输入<code>3dd</code>，将会删除3行文本
+在普通模式下，你还可以使用<code>dw</code>或者<code>daw(delete a word)</code>删除一个单词，所以你可以很容易的联想到<code>dnw</code>(n替换为相应数字)表示删除n个单词</li>
+</ol>
+<h3>游标的快速跳转</h3>
+<p>普通模式下，下列命令可以让光标快速调转到指定位置，我们分别讨论快速实现行间跳转和行内跳转
+1.  #####行间跳转</p>
+<blockquote>
+<p>nG(n Shift+g)  游标移动到第 n 行(如果默认没有显示行号，请先进入命令模式，输入:set nu以显示行号)
+gg  游标移动到到第一行
+G(Shift+g)  到最后一行</p>
+</blockquote>
+<p>小技巧：你在完成依次跳转后，可以使用<code>Ctrl+o</code>快速回到上一次(跳转前)光标所在位置,这个技巧很实用，比如当你在写代码时，忽然想起有个bug，需要修改，这时候你跳过去改好了，只需要按下Ctrl+o就可以回到你之前的位置。
+2.  #####行内跳转
+普通模式下使用下列命令在行内按照单词为单位进行跳转</p>
+<blockquote>
+<p>w  到下一个单词的开头
+e   到下一个单词的结尾
+b   到前一个单词的开头
+ge  到前一个单词的结尾
+0或^ 到行头
+$   到行尾
+<code>f&lt;字母&gt;</code> 向后搜索&lt;字母&gt;并跳转到第一个匹配的位置(非常实用)
+<code>F&lt;字母&gt;</code> 向前搜索&lt;字母&gt;并跳转到第一个匹配的位置
+<code>t&lt;字母&gt;</code> 向后搜索&lt;字母&gt;并跳转到第一个匹配位置之前的一个字母(不常用)
+<code>T&lt;字母&gt;</code> 向前搜索&lt;字母&gt;并跳转到第一个匹配位置之后的一个字母(不常用)</p>
+</blockquote>
+<h3>复制粘贴和剪切</h3>
+<h5>复制及粘贴文本</h5>
+<p>普通模式中使用y复制</p>
+<blockquote>
+<p>普通模式中，<code>yy</code>复制游标所在的整行（3yy表示复制3行）
+普通模式中，<code>y^</code> 复制至行首，或y0。不含光标所在处字符。
+普通模式中，<code>y$</code> 复制至行尾。含光所在处字符。
+普通模式中，<code>yw</code> 复制一个单词。
+普通模式中，<code>y2w</code> 复制两个单词。
+普通模式中，<code>yG</code> 复制至文本末。
+普通模式中，<code>y1G</code> 复制至文本开头。</p>
+</blockquote>
+<p>普通模式中使用p粘贴</p>
+<blockquote>
+<p>普通模式中，<code>p(小写)</code>代表粘贴至光标后（下）
+普通模式中，<code>P(大写)</code>代表粘贴至光标前（上）</p>
+</blockquote>
+<h5>剪切及粘贴</h5>
+<p>其实前面讲得<code>dd</code>删除命令就是剪切，你每次dd删除文档内容后，便可以使用p来粘贴，也这一点可以让我们实现一个很爽快的功能——
+交换上下行：<code>ddp</code>,就这么简单，即实现了快速交换光标所在行与它下面的行。</p>
+<h3>字符的替换及撤销（Undo操作）</h3>
+<p>替换和Undo命令都是针对普通模式下的操作：</p>
+<blockquote>
+<p><code>r+&lt;待替换字母&gt;</code>    将游标所在字母替换为指定字母
+<code>R</code> 连续替换，直到按下Esc
+<code>cc</code>    替换整行，即删除游标所在行，并进入插入模式
+<code>cw</code>    替换一个单词，即删除一个单词，并进入插入模式
+<code>C(大写)</code> 替换游标以后至行末
+<code>~</code> 反转游标所在字母大小写
+<code>u{n}</code>  撤销一次或n次操作
+<code>U(大写)</code> 撤销当前行的所有修改
+<code>Ctrl+r</code>    redo，即撤销undo的操作</p>
+</blockquote>
+<h3>快速缩进</h3>
+<h5>使用命令进行快速调整缩进操作</h5>
+<p>缩进操作均在普通模式下有效
+<em> 普通模式下输入<code>&gt;&gt;</code> 整行将向右缩进。
+</em> 普通模式下输入<code>&lt;&lt;</code>整行向左回退
+* 普通模式下输入<code>:</code>进入命令行模式下对shiftwidth值进行设置可以控制缩进和回退的字符数</p>
+<h5>shiftwidth命令</h5>
+<p>shiftwidth命令是指上一节<code>&gt;&gt;</code>命令产生的缩进（可以简写成sw） 普通模式下输入<code>:</code>进入命令行模式下对shiftwidth值进行设置可以控制缩进和回退的字符数 获取目前的设定值
+<code>:set shiftwidth?</code>
+设置缩进为10个字符
+<code>:set shiftwidth=10</code></p>
+<h5>调整文本位置</h5>
+<p>命令行模式下输入:ce(center)命令使本行内容居中
+<code>:ce</code>
+命令行模式下输入:ri(right)命令使本行文本靠右
+<code>:ri</code>
+命令行模式下输入:le(left)命令使本行内容靠左
+<code>:le</code></p>
+<h3>查找</h3>
+<ol>
+<li>
+<h5>快速查找</h5>
+普通模式下输入<code>/</code>然后键入需要查找的字符串 按回车后就会进行查找。
+<code>？</code>与/功能相同，只不过？是向上而/是向下查找。
+进入查找之后，输入n和N可以继续查找
+n表示继续查找，N反向查找</li>
+<li>
+<h5>高级查找</h5>
+<blockquote>
+<p>普通模式下输入*寻找游标所在处的单词
+普通模式下输入#同上，但 * 是向前（上）找，#则是向后（下）找
+普通模式下输入g*同* ，但部分符合该单词即可
+普通模式下输入g#同# ，但部分符合该单词即可</p>
+</blockquote>
+</li>
+</ol>
+<p>以上查找n,N 的继续查找命令依然可以用。</p>
+<h3>多文件编辑</h3>
+<h5>使用vim编辑多个文件</h5>
+<p>编辑多个文件有两种形式，一种是在进入vim前使用的参数就是多个文件。另一种就是进入vim后再编辑其他的文件。
+同时创建两个新文件并编辑
+<code>$ vim 1.txt 2.txt</code>
+默认进入1.txt文件的编辑界面
+<em> 命令行模式下输入<code>:n</code>编辑2.txt文件，可以加!即:n!强制切换，之前一个文件的输入没有保存，仅仅切换到另一个文件
+</em> 命令行模式下输入<code>:N</code>编辑1.txt文件，可以加!即:N!强制切换，之前文件内的输入没有保存，仅仅是切换到另一个文件</p>
+<h5>进入vim后打开新文件</h5>
+<blockquote>
+<p>命令行模式下输入:e 3.txt 打开新文件3.txt
+命令行模式下输入:e# 回到前一个文件
+命令行模式下输入:ls可以列出以前编辑过的文档
+命令行模式下输入:b 2.txt（或者编号）可以直接进入文件2.txt编辑
+命令行模式下输入:bd 2.txt（或者编号）可以删除以前编辑过的列表中的文件项目
+命令行模式下输入:e! 4.txt，新打开文件4.txt，放弃正在编辑的文件
+命令行模式下输入:f 显示正在编辑的文件名
+命令行模式下输入:f new.txt，改变正在编辑的文件名字为new.txt</p>
+</blockquote>
+<h5>恢复文件</h5>
+<p>如果因为断电等原因造成文档没有保存，可以采用恢复方式，vim -r进入文档后，输入<code>:ewcover 1.txt</code>来恢复</p>
+<h3>可视模式</h3>
+<h5>可视模式命令简介</h5>
+<p>在普通模式下输入<code>v（小写）</code>，进入字符选择模式，就可以移动光标，光标走过的地方就会选取。再次按下v会后就会取消选取。
+在普通模式下输入<code>Shift+v（小写）</code>，进入行选择模式，按下V之后就会把整行选取，您可以上下移动光标选更多的行，同样，再按一次Shift+v就可以取消选取。
+在普通模式下输入<code>Ctrl+v（小写）</code>，这是区域选择模式，可以进行矩形区域选择，再按一次Ctrl+v取消选取。
+在普通模式下输入<code>d</code>删除选取区域内容
+在普通模式下输入<code>y</code>复制选取区域内容</p>
+<h5>视窗操作</h5>
+<p>vim可以在一个界面里打开多个窗口进行编辑，这些编辑窗口称为vim的视窗。
+打开方法有很多种，例如可以使用在命令行模式下输入:new 打开一个新的vim视窗，并进入视窗编辑一个新文件（普通模式下输入Ctrl+w也可以），除了:new命令，下述列举的多种方法也可以在命令模式或普通模式下打开新的视窗：</p>
+<blockquote>
+<p>命令行模式下输入:sp 1.txt 打开新的横向视窗来编辑1.txt
+命令行模式下输入:vsp 2.txt 打开新的纵向视窗来编辑1.txt
+普通模式下Ctrl-w s 将当前窗口分割成两个水平的窗口
+普通模式下Ctrl-w v 将当前窗口分割成两个垂直的窗口
+普通模式下Ctrl-w q  即 :q 结束分割出来的视窗。如果在新视窗中有输入需要使用强制符！即:q!
+普通模式下Ctrl-w o 打开一个视窗并且隐藏之前的所有视窗
+普通模式下Ctrl-w j 移至下面视窗
+普通模式下Ctrl-w k 移至上面视窗
+普通模式下Ctrl-w h 移至左边视窗
+普通模式下Ctrl-w l 移至右边视窗
+普通模式下Ctrl-w J 将当前视窗移至下面
+普通模式下Ctrl-w K 将当前视窗移至上面
+普通模式下Ctrl-w H 将当前视窗移至左边
+普通模式下Ctrl-w L 将当前视窗移至右边
+普通模式下Ctrl-w - 减小视窗的高度
+普通模式下Ctrl-w + 增加视窗的高度</p>
+</blockquote>
+<h5>文档加密</h5>
+<p><code>$ vim -x file1</code>
+输入您的密码
+确认密码
+这样在下一次打开时，vim就会要求你输入密码。</p>
+<h5>在vim执行外部命令</h5>
+<p>在<strong>命令行模式</strong>中输入<code>!</code>可以执行外部的shell命令</p>
+<blockquote>
+<p>:!ls  用于显示当前目录的内容
+:!rm FILENAME用于删除名为 FILENAME 的文件
+:w FILENAME可将当前 VIM 中正在编辑的文件另存为 FILENAME 文件</p>
+</blockquote>
+<h5>帮助系统</h5>
+<p>vim中的查看帮助
+普通模式下按F1打开vim自己预设的帮助文档
+命令行模式下输入:h shiftwidth 打开名为shiftwidth的帮助文件
+命令行模式下输入:ver 显示版本及参数</p>
+<h5>功能设定</h5>
+<p>1.vim的功能设定</p>
+<p>可以在编辑文件的时候进行功能设定，如命令行模式下输入:set nu（显示行数），设定值退出vim后不会保存。要永久保存配置需要修改vim配置文件。
+vim的配置文件~/.vimrc，可以打开文件进行修改，不过务必小心不要影响vim正常使用</p>
+<p>2.获取目前的设定</p>
+<p>命令行模式下输入:set或者:se显示所有修改过的配置
+命令行模式下输入:set all 显示所有的设定值
+命令行模式下输入:set option? 显示option的设定值
+命令行模式下输入:set nooption 取消当期设定值
+3.set功能的说明</p>
+<p>命令行模式下输入:set autoindent(ai) 设置自动缩进
+命令行模式下输入:set autowrite(aw) 设置自动存档，默认未打开
+命令行模式下输入:set background=dark或light，设置背景风格
+命令行模式下输入:set backup(bk) 设置自动备份，默认未打开
+命令行模式下输入: set cindent(cin) 设置C语言风格缩进</p>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/essay.html">essay</a></li>
+		<li><a href="/category/hadoop.html">Hadoop</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/tookerski">GitHub</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

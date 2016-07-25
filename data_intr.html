@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>大数据、数据挖掘及其技术栈浅析</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">tookerski`s techblog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/data_intr.html" rel="bookmark"
+                   title="Permalink to 大数据、数据挖掘及其技术栈浅析">大数据、数据挖掘及其技术栈浅析</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2016-07-22T14:37:00+08:00">
+                周五 22 七月 2016
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/tookerski.html"> tookerski</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h5>前言</h5>
+<p>作为一个还在不断学习大数据和数据挖掘的菜鸟，本来是没资格对这样高大上的主题置喙的。但自从前一阵在跟一个互联网行业的猎头交流之后，我发现即便是对相关概念理应有所认识的朋友似乎也说不出个所以然。推人及己，我更觉有必要适时地总结自己的学习和实践，以便给自己一个提醒和适当的思考。
+这篇文可能没有办法做到面面俱到，把本来就浩如烟海的大数据和数据挖掘的所有概念都铺陈出来。因此，出于总结第一、普及其次的目的，我会尝试把整个数据科学生态链上所能涉及到的技术栈都罗列出来。这样做，一来自己也可以查漏补缺，二来对有机会看到这篇文的朋友，也可以起到互相交流的作用。</p>
+<h5>数据科学生态</h5>
+<p>事实上，如果从纯技术的角度去思考，往往会陷入抽象概念的漩涡中无法自拔。然而大数据及数据挖掘之所以在当下十分火热，正是因为它解决了许多原来无法想象的难题。现在流行把对全局态势有神一样的把控能力说成是“开了上帝视角”，某种意义上说，大数据及数据挖掘正是让人有了类似上帝视角的能力。
+数据科学有着自己清晰的逻辑脉络，涵盖了数据从产生到呈现的完整生命线。包括数据获取（采集）、数据存储、数据仓库、数据共享、数据挖掘、数据分析和数据呈现。这里每一个过程都涉及大量的理论、技术，从这个角度说，数据科学更像是大学里的一个专业，而不是简单的计算机科学和统计学的交叉学科，更不是这些学科的某一个分支。</p>
+<h5>数据获取</h5>
+<p>一般来说，业务过程中自然会产生一些数据，包括业务数据、系统日志记录、管理数据等等。现在的技术有能力把系统或平台运行中所有正常及异常的数据记录下来，并保存到数据库中，这些就构成了原始的机器数据。此外，数据获取的重要手段还包括线上爬虫和线下的传感器采集。网络爬虫发轫于搜索引擎产业，但是随着人们对数据的个性化需求越来越突出，一些定制的、轻量级的爬虫产品也逐渐出现在人们视野中；而企业出于竞争的需求，现在也开始尝试利用爬虫技术去获取数据用于企业的发展和决策。线下的传感器不是很了解，但可以理解为相当于端口的实体化，一般伴随着无线信号传输，经处理器处理后进行存储。比如随处可见的信号基站和更常见的wifi，就是个数据采集器。
+关于数据获取，站在工业化的角度，基于Hadoop、nutch和solr搭建企业的数据挖掘系统是个好办法。该系统主要起到两个作用：一是整合业务系统、ERP系统和CRM系统所提供的端口，汇总企业经营中所产生的数据，做统一的存储、索引及分析。二是定制搜索引擎，采集企业外部与经营有关的数据。实现的方式很多，但要关注性能问题及今后可能的扩展问题。</p>
+<h5>数据存储、仓库和共享</h5>
+<p>与传统的数据库不同，如果要实现满足工业化需求的大数据功能，必须使用支持高并发的数据库。Hbase是使用范围较广的，也能满足基本的数据存储需求。此外，对轻量级的项目，也可以使用NoSQL类型的比如Mongodb就非常不错了。
+数据存储的更高一级实现是数据仓库，但这个已经属于数据库工程师的范畴了。</p>
+<h5>数据挖掘和分析</h5>
+<p>其实大数据和数据挖掘这一岗位设定，可以做出粗浅的两种划分。一种是大数据工程师，偏重的是平台的开发和部署，计算机技术要求较高；另一种是数据挖掘工程师，偏重的是平台的使用和算法设计，需要理解业务，数学要求较高。当然，在这两种大牛以外，还有数据分析师的岗位，这个就更需要业务知识了，甚至往往就是做业务的兼职。一般来说，大数据工程师把分布式系统搭建起来后，由数据挖掘工程师根据业务需要，设计算法挖掘潜在海量数据，并制定数学模型。这又往往与业务相关，比如在线交易关注的是交易安全、互联网电商关注的是精准推荐等等。再后面，数据分析师可以从专门的业务数据输出中，找出自己感兴趣的一块进行专门分析。
+数据挖掘的应用上，最炙手可热的莫过于机器学习、深度学习和人工智能了。这是通过数据来模拟出一定程度上智能的方法。机器学习既能实现可用性较广的模型，更能作为新的产品推出，用来满足企业或消费者的需求。</p>
+<h5>数据呈现</h5>
+<p>数据可视化往往是数据生态链的末端了，数据呈现的方式多种多样。我个人比较青睐的是网络图，这也是能充分发挥分布式运算和大数据集优点的展现形式，特别是在做关联分析时十分有用。解决复杂问题最有效的往往是十分简洁的方法，以在线交易为例子，涉及到的交易方纷繁复杂，在数据量不够大的时候，往往无法得出明显的特点和趋势。但是当数据量够大时，将会发现大量的交易特点满足大数定律。那么，对于一些明显的异常或误差，判断这是可疑交易的几率就非常大了。</p>
+<p>数据科学真的是很迷人的一个领域，无论你是一个计算机爱好者、数学爱好者，或者是一个喜爱用数据说话的，热衷于解决问题的人，都会自觉不自觉地踏入这一领域。现在好多人喜欢用风口去形容一些新兴的技术，我不是很认同。新技术的出现，带来新的经济增长点固然是一方面，但窃以为新技术更重要的使命是解决人类所面临的一些发展方面的问题，脚踏实地也要仰望星空。</p>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/essay.html">essay</a></li>
+		<li><a href="/category/hadoop.html">Hadoop</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/tookerski">GitHub</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
