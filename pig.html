@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>Hadoop1.0.4下安装pig0.12.0</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">tookerski`s techblog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/pig.html" rel="bookmark"
+                   title="Permalink to Hadoop1.0.4下安装pig0.12.0">Hadoop1.0.4下安装pig0.12.0</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2016-07-26T23:30:00+08:00">
+                周二 26 七月 2016
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/tookerski.html"> tookerski</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <ol>
+<li>使用自带Firefox下载并解压pig-0.12.0.tar.gz在当前目录
+<code>tookerski@tookerski:~/Downloads$ tar -zxvf pig*</code></li>
+<li>复制到home目录下的apache文件夹，注意使用sudo命令
+<code>tookerski@tookerski:~/Downloads$ sudo mv pig-0.12.0 ~/apache/</code></li>
+<li>设置环境变量，用vim打开home目录下.bashrc文件
+<code>tookerski@tookerski:~/apache$ sudo vim ~/.bashrc</code></li>
+<li>环境变量设置如下：
+<code>export PIG_HOME=/home/tookerski/apache/pig-0.12.0</code>
+<code>export PIG_CLASSPATH=$HADOOP_HOME/conf</code>
+<code>export PATH=$PATH:$PIG_HOME/bin</code></li>
+<li>使环境变量生效
+<code>source ~/.bashrc</code></li>
+<li>使用<code>pig -x local</code>检查本地运行是否成功
+<code>tookerski@tookerski:~/apache$ pig -x local</code></li>
+<li>出现以下讯息表示安装成功：
+Warning: $HADOOP_HOME is deprecated.
+2016-07-26 23:47:09,722 [main] INFO  org.apache.pig.Main - Apache Pig version 0.12.0 (r1529718) compiled Oct 07 2013, 12:20:14
+2016-07-26 23:47:09,723 [main] INFO  org.apache.pig.Main - Logging error messages to: /home/tookerski/apache/pig_1469548029718.log
+2016-07-26 23:47:09,848 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /home/tookerski/.pigbootup not found
+2016-07-26 23:47:10,252 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: file:///
+grunt&gt;</li>
+<li>Hadoop下检验是否安装成功
+tookerski@tookerski:~/apache/hadoop-1.0.4$ bin/start-all.sh
+Warning: $HADOOP_HOME is deprecated.
+starting namenode, logging to /home/tookerski/apache/hadoop-1.0.4/libexec/../logs/hadoop-tookerski-namenode-tookerski.out
+localhost: starting datanode, logging to /home/tookerski/apache/hadoop-1.0.4/libexec/../logs/hadoop-tookerski-datanode-tookerski.out
+localhost: starting secondarynamenode, logging to /home/tookerski/apache/hadoop-1.0.4/libexec/../logs/hadoop-tookerski-secondarynamenode-tookerski.out
+starting jobtracker, logging to /home/tookerski/apache/hadoop-1.0.4/libexec/../logs/hadoop-tookerski-jobtracker-tookerski.out
+localhost: starting tasktracker, logging to /home/tookerski/apache/hadoop-1.0.4/libexec/../logs/hadoop-tookerski-tasktracker-tookerski.out
+tookerski@tookerski:~/apache/hadoop-1.0.4$ jps
+4798 TaskTracker
+4661 JobTracker
+4431 DataNode
+4566 SecondaryNameNode
+4904 Jps
+4276 NameNode
+tookerski@tookerski:~/apache/hadoop-1.0.4$ pig
+Warning: $HADOOP_HOME is deprecated.
+2016-07-26 23:55:05,188 [main] INFO  org.apache.pig.Main - Apache Pig version 0.12.0 (r1529718) compiled Oct 07 2013, 12:20:14
+2016-07-26 23:55:05,190 [main] INFO  org.apache.pig.Main - Logging error messages to: /home/tookerski/apache/hadoop-1.0.4/pig_1469548505185.log
+2016-07-26 23:55:05,236 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /home/tookerski/.pigbootup not found
+2016-07-26 23:55:05,696 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: hdfs://localhost:54310
+2016-07-26 23:55:06,338 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to map-reduce job tracker at: hdfs://localhost:54311
+grunt&gt;</li>
+</ol>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/big-data.html">Big data</a></li>
+		<li><a href="/category/essay.html">essay</a></li>
+		<li><a href="/category/hadoop.html">Hadoop</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/tookerski">GitHub</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

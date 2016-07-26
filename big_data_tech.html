@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>大数据的处理技术</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">tookerski`s techblog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/big_data_tech.html" rel="bookmark"
+                   title="Permalink to 大数据的处理技术">大数据的处理技术</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2016-07-26T15:26:00+08:00">
+                周二 26 七月 2016
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/tookerski.html"> tookerski</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h4>大数据的分布式与并行计算</h4>
+<p>分布式计算是一种计算方法，它将多个计算资源连接成一个网络，并把计算任务分发给网络中的资源进行计算。
+比起传统的计算方式，分布式计算更加快速和有效。因此，在有限时间内处理大量数据的时候，它就变得很有价值。
+为了实现复杂的计算，为一个单独的个人电脑增加处理单元，也可以提高计算能力。
+将任务分为多个子任务，并将这些子任务由多台电脑同时处理，这样的系统就叫做并行系统。
+处理能力越高，计算速度越快。这两个方法非常适用于大数据分析。</p>
+<h4>分布式与并行计算比较</h4>
+<table>
+<thead>
+<tr>
+<th>分布式系统</th>
+<th>并行计算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一系列独立的计算机通过网络进行连接，完成特定的任务</td>
+<td>一个计算机，具有多个处理单元</td>
+</tr>
+<tr>
+<td>相互连接的计算机一起合作，它们是独立自治的系统，各自具有独立的处理单元和内存空间</td>
+<td>所有的处理单元共享内存空间，且每个处理单元都可以直接连接到内存空间中</td>
+</tr>
+<tr>
+<td>相互连接的计算机是松散耦合的，并且可以连接远程的数据和资源</td>
+<td>系统是紧密耦合的，通常用于处理单一的复杂问题</td>
+</tr>
+</tbody>
+</table>
+<h4>复杂数据分析</h4>
+<p>为了利用强大的硬件处理复杂的数据分析问题， 需要编写新的软件。 复杂数据分析的过程如下所示:
+<em> 将一项作业分成多个小任务
+</em> 调查周边所有可用的计算资源
+* 向互联的节点分配任务</p>
+<h4>延迟问题</h4>
+<ul>
+<li>尽管技术在不断发展，延迟的问题一直都存在。</li>
+<li>延迟是系统中各种拖延的积累，产生的原因是需要处理的数据量巨大，单个任务中会产生延迟。</li>
+<li>常规大数据应用通常受困于延迟问题，因此性能比较低。</li>
+<li>为了解决这些问题，分布式与并行处理技术提供了具体的解决方案。</li>
+<li>分布式与并行处理技术不仅可以在短时间内处理大量的数据，也可以解决延迟问题。</li>
+</ul>
+<h4>并行计算技术</h4>
+<p>下面的表格列举了目前用于处理高速大容量数据的并行计算关键技术:</p>
+<table>
+<thead>
+<tr>
+<th>集群或网格</th>
+<th>大规模并行处理(MPP)</th>
+<th>高性能计算(HPC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>许多服务器相互连接形成一个网络，因此他们可以共同分担工作量</td>
+<td>一个MPP平台是一个工作过程类似于网格的独立机器。它处理存储，内存和计算任务</td>
+<td>它使用内存内技术，用于高速浮点运算处理</td>
+</tr>
+<tr>
+<td>网格提供了划算的存储解决方案，尽管总体的成本可能比较高</td>
+<td>MPP平台适用于高价值的用途。EMC Greenplum和ParAccel是其中的两个例子</td>
+<td>HPC环境专业应用以及定制化应用的开发十分理想</td>
+</tr>
+</tbody>
+</table>
+<h4>Hadoop技术</h4>
+<ul>
+<li>处理如此大量的数据需要更好的分析技术，这就需要更高的计算能力</li>
+<li>Hadoop是一个开源的平台，用来处理大量的结构化与非结构化数据</li>
+<li>一般来说，分析如此大量的数据需要通过分布式计算</li>
+<li>Hadoop是一个简单的程序模型，可使用户创建并运行分布式系统</li>
+<li>Hadoop可以自动高效地向各机器分发数据，他利用了CPU多核并行计算的原理</li>
+</ul>
+<h4>Hadoop的特性</h4>
+<ul>
+<li>Hadoop可运行于大量的机器上，它们之间不共享内存或硬盘，这样就解决了存储和连接的效率问题</li>
+<li>当数据载入Hadoop平台时，存储效率得以提升，因为Hadoop将数据分发到不同的服务器上</li>
+<li>数据的接入得到改善，因为Hadoop可以追踪不同服务器上存储的数据</li>
+<li>处理性能得以提升，因为Hadoop通过并行使用所有可利用的处理器运行计算任务</li>
+<li>通过保存多分数据拷贝，在服务器失效的情况下，数据依然可用，因此Hadoop提高了可恢复性。</li>
+</ul>
+<h4>Hadoop如何运行</h4>
+<p>Hadoop系统的主要组件:
+<strong>Hadoop分布式文件系统(HDFS)</strong>
+* HDFS是一个可靠地，高带宽，低成本的数据存储集群，可以简化机器间相关文件的管理</p>
+<p><strong>Hadoop MapReduce引擎</strong>
+<em> Hadoop MapReduce是对MapReduce算法的一个实现，是由Apache项目研发和维护
+</em> 此算法提供了将数据分成易处理的小块，并在分布式集群中并行处理数据的能力</p>
+<h6>HDFS</h6>
+<p>每个服务器通过作业代码对存储与其上的数据进行处理并返回结果。最后，Hadoop将所有服务器返回的结果进行整合并返回最终结果</p>
+<h4>云计算</h4>
+<p>云计算是一种提供共享计算资源的方法，其中含有应用，存储，计算，网络，研发，平台部署以及商务流程等。
+通过提供横向可扩展的、优化的、支持大数据实现的基础设置，云在大数据世界中扮演了重要角色。
+基于云的应用平台使得应用可以更简单的使用计算资源，根据你使用了什么，使用了多少计算资源进行付费。
+通过云计算的灵活性，你可以用一个小按钮对计算资源进行动态控制和连接，并且只对你使用的资源付费。</p>
+<h6>云计算模型的特性</h6>
+<p>可扩展性——使用分布式计算，可以在软硬件资源中提供可扩展性
+灵活性——使用户使用并且只为他们需要的云服务的用量支付费用
+资源池——使得多个公司利用相同的计算资源，而不用单独进行投资
+自助性——提供了简单易用的接口，客户可以选择想要的服务
+低成本——客户可以不用投资进行基础设施的部署，因此从中获益
+容错性——如果云系统中的某一部分停止响应，整个系统也可以恢复过来</p>
+<h6>云部署模型的种类</h6>
+<ol>
+<li>公有云</li>
+<li>私有云</li>
+</ol>
+<h6>公有云</h6>
+<ul>
+<li>公有云由专门的公司拥有并运营，可供其他公司或个人使用。公共云提供了一系列计算服务</li>
+<li>通过专门设计，公有云可对软件进行定制化服务，以优化性能。比如说，它可以在视频存储上进行专门化，使YouTube或者Vimeo上的视频直播服务更好，同时，它也可以优化大量流量的控制问题</li>
+<li>商业上，公有云提供了节约成本的存储解决方案，是一种处理复杂数据分析问题的有效方式。</li>
+<li>有时，这些因素的优势要比公有云所固有的安全性和延迟问题产生的负面影响更重要。</li>
+</ul>
+<h6>私有云</h6>
+<ul>
+<li>私有云由某个公司拥有和运营，但只做公司内部使用</li>
+<li>除了公司员工，合作伙伴和客户也可以使用公司的私有云</li>
+<li>私有云包含了一个公司的系统和处理过程</li>
+<li>公司的商业规则，管理政策和合规性检查可以整合到私有云中</li>
+<li>私有云是高度自治的，也会有防火墙保护</li>
+</ul>
+<h4>云交付模型</h4>
+<p>IaaS——基础设施即服务（IaaS）基础设施指的是硬件、存储和网络。公共云和私有云均可使用此类云服务。 IaaS的例子有虚拟机、负载平衡器以及网络附加存储。
+PaaS——平台即服务（PaaS基础设施提供一个平台 用户可以在上面编写或运行程序.这里的平台指的是操作系统是中间件服务与软件开发和部署工具的集合。PaaS的例子有Windows Azure和谷歌应用程序引擎(GAE)。
+SaaS——软件即服务（SaaS）基础设施提供了可以由任意地点接入的软件。这些软件应用是按月或者按年提供的.为了使SaaS工作, IaaS和PaaS必须已经先运转起来</p>
+<h6>云应用于大数据</h6>
+<p>公共云中的IaaS——使用云服务提供商针对大数据服务的基础设施， 可以使用到几乎无限制的存储与计算能力。
+私有云中的PaaS——PaaS供应商开始在他们的Paas服务中包含大数据技术， 比如说Hadoop和MapReduce,如此一来消除了管理个人软硬件产生的复杂性.
+混合云中的SaaS——很多公司发现了分析客户声音的必要性， 尤其是社交媒体上的。 SaaS供应商为分析这些数据提供了平台， 同时也可以提供社交媒体上的数据.</p>
+<h6>云市场提供商</h6>
+<p>亚马逊——亚马逊Elastic MapReduce,亚马逊DynamoDB,亚马逊简单存储服务(S3), 亚马逊高性能计算， 以及亚马逊RedShift
+谷歌——谷歌计算引擎, 谷歌BigQuery, 以及谷歌Prediction API
+微软——Windows Azure</p>
+<h4>内存内（IMC）技术</h4>
+<ul>
+<li>分布式计算可以满足大数据分析对于处理能力的需求</li>
+<li>内存内计算（ IMC）也可以增加处理能力和速度</li>
+<li>如果数据用行和列的形式呈现，数据处理将变得简单</li>
+<li>这样的数据被称为结构化数据，它们具有一系列变量，每个变量有特定的值</li>
+<li>此类实时分析需要较大的处理能力，也可由IMC实现</li>
+</ul>
+<h6>如何运作</h6>
+<p>早期，数据存储于外部设备中，叫做二级存储。为了使用这些数据，用户必须从外部通过输入/输出通道接入数据。数据会暂时移动到一级存储（主存）中，然后进行费时的
+处理过程。
+IMC使用一级存储中的数据，RAM使得分析更加快速，相比于传统方法，处理过程也更加快速.
+IMC应用和数据拥有同样的地址，因此分析的速率较快.数据库查询与事务以同样的方
+式进行工作——因为他们一直在工作，但返回结果的速率更快.
+大数据——&gt;内存内计算——&gt;使商业用户随时可以使用数据</p>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/big-data.html">Big data</a></li>
+		<li><a href="/category/essay.html">essay</a></li>
+		<li><a href="/category/hadoop.html">Hadoop</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/tookerski">GitHub</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
