@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>tookerski`s techblog - MySql</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">tookerski`s techblog <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content">
+
+
+
+   <div class="row">
+
+
+        <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/sqoop.html" rel="bookmark" title="Permalink to 安装sqoop并连接MySql">安装sqoop并连接MySql</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2016-07-27T22:33:00+08:00"> 周三 27 七月 2016 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/tookerski.html"> tookerski</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <h4>Ubuntu16.04安装MySQL数据库</h4>
+<ol>
+<li>首先，通过apt命令本机安装MySQL服务器和客户端
+<code>sudo apt-get install mysql-server</code>
+<code>sudo apt-get install mysql-client</code></li>
+<li>一旦安装完成，MySQL 服务器应该自动启动。您可以在终端提示符后运行以下命令来检查 MySQL 服务器是否正在运行：
+<code>sudo netstat -tap | grep mysql</code>
+当您运行该命令时，您可以看到类似下面的行：
+<code>tcp 0 0 localhost.localdomain:mysql *:* LISTEN -</code></li>
+</ol>
+<h4>安装MySQL-connector-java</h4>
+<ol>
+<li>解压MySQL-connector-java
+<code>tar -zxvf mysql*</code></li>
+<li>复制jar文件至Java安装目录下的lib文件夹
+<code>cp mysql* ~/apache/jdk1.7.0_80/lib</code></li>
+</ol>
+<h4>安装sqoop</h4>
+<ol>
+<li>解压sqoop
+<code>tar -zxvf sqoop ...</code></li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/sqoop.html" rel="bookmark" title="Permalink to 安装sqoop并连接MySql">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/sqoop.html">sqoop</a>
+                                            <a class="danger label" href="/tag/mysql.html">MySql</a>
+                                            <a class="danger label" href="/tag/jdbc.html">JDBC</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul class="blank">
+		<li><a href="/category/big-data.html">Big data</a></li>
+		<li><a href="/category/essay.html">essay</a></li>
+		<li><a href="/category/hadoop.html">Hadoop</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul class="blank">
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul class="blank">
+    <li><a href="https://github.com/tookerski">GitHub</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
